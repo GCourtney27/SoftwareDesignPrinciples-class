@@ -1,1 +1,1 @@
-# SoftwareDesignPrinsiples-class
+# SoftwareDesignPrinciples-class
