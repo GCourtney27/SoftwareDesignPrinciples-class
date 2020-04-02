@@ -8,7 +8,7 @@
 FileSystem::FileSystem(bool flushFileOnConstruct)
 {
 	if(flushFileOnConstruct)
-		//FlushFile("Signatures.txt");
+		FlushFile("Signatures.txt");
 
 	m_Date = Time::Get().GetDate(Time::DAY | Time::MONTH | Time::YEAR);
 }

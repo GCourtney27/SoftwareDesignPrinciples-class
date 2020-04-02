@@ -20,7 +20,7 @@ int main()
 	fs.SetShiftPattern(FileSystem::ShiftPattern::DECREMENT);
 	fs.SetLineEndingConversionEnabled(true);
 
-	//fs.WriteFile("Signatures.txt", "Hello\rWorld");
+	fs.WriteFile("Signatures.txt", "Hello\rWorld");
 	std::string fileText = fs.ReadFile("Signatures.txt");
 	LOG(fileText);
 }
