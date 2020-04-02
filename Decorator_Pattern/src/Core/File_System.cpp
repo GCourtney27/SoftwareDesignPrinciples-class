@@ -8,7 +8,7 @@
 FileSystem::FileSystem(bool flushFileOnConstruct)
 {
 	if(flushFileOnConstruct)
-		FlushFile("Signatures.txt");
+		//FlushFile("Signatures.txt");
 
 	m_Date = Time::Get().GetDate(Time::DAY | Time::MONTH | Time::YEAR);
 }
@@ -58,7 +58,7 @@ bool FileSystem::WriteFile(const std::string& file, const std::string& content)
 		throw std::exception("Fialed to write to file. The file may not exist.");
 		fileStream.flush();
 	}
-	if (!(fileStream << (m_ConveretLineEndings ? "\n" + m_Signature : "\r" + m_Signature) )) {
+	if (!(fileStream << (m_ConveretLineEndings ? "\n" : "\r") + m_Signature)) {
 		throw std::exception("Fialed to write signature to file. The file may not exist.");
 		fileStream.flush();
 	}
@@ -85,7 +85,7 @@ void FileSystem::FlushFile(std::string file)
 void FileSystem::ShiftCharacters(std::string& str)
 {
 	for (unsigned int i = 0; i < str.length(); i++)	{
-		if (str[i] == '\n')
+		if (str[i] == '\n' || str[i] == '\r')
 			continue;
 		if (m_ShiftPattern == ShiftPattern::INCREMENT) {
 			str[i] = ++str[i];
