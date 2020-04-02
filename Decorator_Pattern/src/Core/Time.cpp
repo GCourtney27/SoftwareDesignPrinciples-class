@@ -13,6 +13,9 @@ Time::~Time()
 {
 }
 
+// Returns the current system date as a string. You may specify 
+// what values to return (day, month or year) via logical or'ing
+// Ex) eDate::DAY | eDate::YEAR - returns only the current day and year
 std::string Time::GetDate(int category)
 {
 	std::string date;

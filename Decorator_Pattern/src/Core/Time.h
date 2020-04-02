@@ -7,9 +7,9 @@ class Time
 public:
 	enum eDate
 	{
-		DAY = 1 << 1,
-		MONTH = 1 << 2,
-		YEAR = 1 << 3
+		DAY		= 1 << 1,
+		MONTH	= 1 << 2,
+		YEAR	= 1 << 3
 	};
 
 	Time();
